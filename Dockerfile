@@ -20,6 +20,9 @@ ARG LIBREMOVE="dpkg -r --force-depends"
 ARG LIBPURGE="dpkg -P --force-depends"
 
 ENV DEBIAN_FRONTEND="noninteractive" TERM="xterm"
+ENV MSFUSER=metasploit
+ENV MSFPASS=_m4t4spl01t_
+ENV MSFPORT=55553
 
 COPY /rootfs/entry-point.sh /
 
@@ -30,5 +33,7 @@ RUN  $PKGUPDATE \
   && $PKGCLEAN \
   && $DELTEMP
 
+EXPOSE 55553
+
 ENTRYPOINT ["/entry-point.sh"]
-CMD ["kea-dhcp6","-d","-c","$KEACONF"]
+CMD ["msfrpcd","-U $MSFUSER","-P $MSFPASS","-f"]
