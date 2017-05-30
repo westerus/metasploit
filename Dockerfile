@@ -21,7 +21,7 @@ ARG LIBPURGE="dpkg -P --force-depends"
 
 ENV DEBIAN_FRONTEND="noninteractive" TERM="xterm"
 ENV MSFUSER=metasploit
-ENV MSFPASS=_m4t4spl01t_
+ENV MSFPASS=M3t4Spl01t_
 ENV MSFPORT=55553
 
 COPY /rootfs/entry-point.sh /
@@ -36,4 +36,4 @@ RUN  $PKGUPDATE \
 EXPOSE 55553
 
 ENTRYPOINT ["/entry-point.sh"]
-CMD ["msfrpcd","-U $MSFUSER","-P $MSFPASS","-f"]
+CMD ["msfrpcd","-U","$MSFUSER","-P","$MSFPASS","-f"]
