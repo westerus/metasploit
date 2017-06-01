@@ -26,10 +26,10 @@ WORKDIR /usr/src/
 
 RUN  $PKGUPDATE \
   && $PKGUPGRADE \
-  && $PKGINSTALL ca-certificates python py-setuptools git \
+  && $PKGINSTALL ca-certificates gcc python py-setuptools git \
   && git clone $URL1 && git clone $URL2 /msfconsole \
   && cd pymetasploit && python setup.py install \
-  && $PKGREMOVE git py-setuptools \
+  && $PKGREMOVE git py-setuptools  gcc\
   && $DELTEMP
 
 WORKDIR /msfconsole
