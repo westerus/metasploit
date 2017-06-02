@@ -35,4 +35,4 @@ RUN  $PKGUPDATE \
 WORKDIR /msfconsole
 
 ENTRYPOINT ["/entry-point.sh"]
-CMD python Main.py --ssl --port ${MSFPORT} --host ${MSFHOST} --user ${MSFUSER} --pass ${MSFPASS}
+CMD python Main.py --port ${MSFPORT} --host ${MSFHOST} --user ${MSFUSER} --pass ${MSFPASS}
