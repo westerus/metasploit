@@ -36,4 +36,4 @@ RUN  $PKGUPDATE \
 EXPOSE 55553
 
 ENTRYPOINT ["/entry-point.sh"]
-CMD msfrpcd -U ${MSFUSER} -P ${MSFPASS} -S -f
+CMD msfrpcd -U ${MSFUSER} -P ${MSFPASS} -f
